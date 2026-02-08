@@ -18,6 +18,11 @@ const burgers = [
     description: "שתי קציצות, גבינה, רוטב הבית",
     price: "₪59",
   },
+  {
+    name: "Burger VIP",
+    description: "קציצת אנגוס מיושנת, פואה גרא, כמהין, גבינת ברי וירקות צלויים",
+    price: "₪89",
+  },
 ]
 
 export function MenuSection() {
