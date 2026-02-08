@@ -9,6 +9,14 @@
 <body>
 
   <header>
+    <div class="auth-buttons" id="authButtons">
+      <button class="auth-btn" onclick="showLogin()">התחבר</button>
+      <button class="auth-btn signup-btn" onclick="showSignup()">הירשם</button>
+    </div>
+    <div class="user-info" id="userInfo" style="display: none;">
+      <span id="userEmail"></span>
+      <button class="auth-btn" onclick="logout()">התנתק</button>
+    </div>
     <h1>🍔 Burger House</h1>
     <p>ההמבורגר הכי טוב בעיר</p>
   </header>
@@ -48,6 +56,32 @@
   <footer>
     <p>📍 רחוב ההמבורגר 12 | ☎️ 03-1234567</p>
   </footer>
+
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeLogin()">&times;</span>
+      <h2>התחברות</h2>
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <input type="email" id="loginEmail" placeholder="אימייל" required />
+        <input type="password" id="loginPassword" placeholder="סיסמה" required />
+        <button type="submit">התחבר</button>
+        <p class="error-message" id="loginError"></p>
+      </form>
+    </div>
+  </div>
+
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeSignup()">&times;</span>
+      <h2>הרשמה</h2>
+      <form id="signupForm" onsubmit="handleSignup(event)">
+        <input type="email" id="signupEmail" placeholder="אימייל" required />
+        <input type="password" id="signupPassword" placeholder="סיסמה (לפחות 6 תווים)" required minlength="6" />
+        <button type="submit">הירשם</button>
+        <p class="error-message" id="signupError"></p>
+      </form>
+    </div>
+  </div>
 
   <script type="module" src="./script.js"></script>
 </body>
